@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style6.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Students List</h1>
+        <a href="/courses" class="go-to-courses">Go to Courses</a>
+        {% if students %}
+        <table class="table table-striped" id="all-students">
+            <tr>
+                <th>SNo</th>
+                <th>Roll Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Actions</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><a href="/student/{{ student.student_id }}">{{ student.roll_number }}</a></td>
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.last_name }}</td>
+                <td>
+                    <a href="/student/{{ student.student_id }}/update" class="btn btn-sm btn-outline-primary">Update</a>
+                    <a href="/student/{{ student.student_id }}/delete" class="btn btn-sm btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="no-students">No student found. Add the students now!</p>
+        {% endif %}
+        <a href="/student/create" class="add-student-btn btn btn-primary">+ Add Student</a>
+    </div>
+</body>
+</html>

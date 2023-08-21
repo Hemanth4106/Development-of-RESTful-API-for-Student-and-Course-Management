@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Courses List</h1>
+        <a href="/" class="go-to-students">Go to Students</a>
+        {% if courses %}
+        <table class="table table-striped" id="all-courses">
+            <tr>
+                <th>SNo</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Course Description</th>
+                <th>Actions</th>
+            </tr>
+            {% for course in courses %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><a href="/course/{{ course.course_id }}">{{ course.course_code }}</a></td>
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.course_description }}</td>
+                <td>
+                    <a href="/course/{{ course.course_id }}/update" class="btn btn-sm btn-outline-primary" type="button">Update</a>
+                    <a href="/course/{{ course.course_id }}/delete" class="btn btn-sm btn-outline-danger" type="button">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="no-courses">No courses found. Add the courses now!</p>
+        {% endif %}
+        <a href="/course/create" class="add-course-btn btn btn-primary">+Add Course</a>
+    </div>
+</body>
+</html>
+
+
+
+
+   
+                
+        

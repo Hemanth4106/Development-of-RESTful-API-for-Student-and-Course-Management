@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style8.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Student Details</h1>
+        <table class="table" id="personal-details">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ student.roll_number }}</td>
+                    <td>{{ student.first_name }}</td>
+                    <td>{{ student.last_name }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="sub-title">Enrollments</h2>
+        <table class="table" id="enroll-table">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Course Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ course.course_code }}</td>
+                    <td>{{ course.course_name }}</td>
+                    <td>{{ course.course_description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/" class="go-back-link">Go Back</a>
+    </div>
+</body>
+</html>

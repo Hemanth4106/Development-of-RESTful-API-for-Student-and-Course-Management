@@ -1,0 +1,30 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-box {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.message {
+    font-size: 18px;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+.go-home-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.go-home-link:hover {
+    text-decoration: underline;
+}

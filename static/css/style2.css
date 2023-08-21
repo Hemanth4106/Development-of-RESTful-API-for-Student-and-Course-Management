@@ -1,0 +1,35 @@
+.page-title {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sub-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.go-back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
