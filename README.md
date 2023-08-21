@@ -1,7 +1,8 @@
 # Development-of-RESTful-API-for-Student-and-Course-Management
 
-Web application which allows CRUD operations for student as well as on the courses with a database model, using flask and flask-SQLAlchemy.
 
+Developed a robust RESTful API using Flask-RESTful and Flask-SQLAlchemy frameworks. 
+Enabled Create, Read, Update, and Delete (CRUD) operations for both student and course entities, facilitating efficient management of student information and course data.
 
 <img width="661" alt="image" src="https://github.com/Hemanth4106/Development-of-RESTful-API-for-Student-and-Course-Management/assets/108258047/01086968-91d1-4a19-8b8e-747206a3575c">
 
